@@ -1,0 +1,16 @@
+<h1>480Chan - Image Board!</h1>
+
+{{#each imgPost}}
+<h2> {{this.title}}</h2>
+<br>
+{{#each this.images}}
+<p>{{this.caption}}</p>
+<img src={{this.url}}>
+<br>
+{{/each}}
+{{/each}}
+
+<form method="post" action="/image-posts/{{slug}}">
+    New Url: <input type="text" name="updatedUrl" required>, New Caption: <input type="text" name="updatedCaption"><br>
+    <input type="submit" value="Add Another">
+</form>
