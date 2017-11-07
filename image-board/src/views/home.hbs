@@ -1,0 +1,29 @@
+<h1>480Chan - Image Board!</h1>
+
+<form class="getImagePost" method="post" action="">
+   <p class="add">
+    Image Post Title: <input name="title" type="text">
+    <br><br>
+    Image 1 URL: <input name="url1" type="text"> 
+    , Caption: <input name="caption1" type="text">
+    <br><br>
+     Image 2 URL: <input name="url2" type="text"> 
+    , Caption: <input name="caption2" type="text">
+    <br><br>
+     Image 3 URL: <input name="url3" type="text"> 
+    , Caption: <input name="caption3" type="text">
+    <br><br>
+   <input type="submit" value="Add New Image Post">
+   </p>
+</form>
+
+
+{{#each posts}}
+<h2> {{this.title}}</h2)
+<br>
+{{#each this.images}}
+<p>{{this.caption}}</p>
+<img src={{this.url}}>
+<br>
+{{/each}}
+{{/each}}
