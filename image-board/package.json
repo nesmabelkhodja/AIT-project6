@@ -13,6 +13,10 @@
     "eslint": "^4.10.0"
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "hbs": "^4.0.1",
+    "mongoose": "^4.13.0",
     "readline-sync": "^1.4.7"
   }
 }
