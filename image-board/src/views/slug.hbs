@@ -1,14 +1,16 @@
-<h1>480Chan - Image Board!</h1>
-
+<h1> {{imgPost.title}}</h2>
+<h2 style="color:red;">{{error}}</h2>
+<form method="post" action="/image-posts/delete/{{imgPost.slug}}">
 {{#each imgPost}}
-<h2> {{this.title}}</h2>
-<br>
 {{#each this.images}}
-<p>{{this.caption}}</p>
+<p><input type="checkbox" name="toDelete" value="{{this._id}}">
+{{this.caption}}</p>
 <img src={{this.url}}>
 <br>
 {{/each}}
 {{/each}}
+<input type="submit" value="Delete Image(s)">
+</form>
 
 <form method="post" action="/image-posts/{{slug}}">
     New Url: <input type="text" name="updatedUrl" required>, New Caption: <input type="text" name="updatedCaption"><br>

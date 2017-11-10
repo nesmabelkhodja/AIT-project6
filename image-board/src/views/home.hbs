@@ -1,6 +1,8 @@
 <h1>480Chan - Image Board!</h1>
 
-<form class="getImagePost" method="post" action="">
+<h2 style="color:red;">{{error}}</h2>
+
+<form class="getImagePost" method="post" action="/add">
    <p class="add">
     Image Post Title: <input name="title" type="text">
     <br><br>
@@ -19,11 +21,13 @@
 
 
 {{#each posts}}
-<h2><a href="/image-posts/{{this.title}}">{{this.title}}</a></h2>
+<h2><a href="/image-posts/{{slug}}">{{this.title}}</a></h2>
 <br>
 {{#each this.images}}
-<p>{{this.caption}}</p>
-<img src={{this.url}}>
+<p>{{this.caption}}
 <br>
+<img src={{this.url}} align="middle">
+</p>
+
 {{/each}}
 {{/each}}
